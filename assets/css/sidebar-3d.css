@@ -1,0 +1,182 @@
+/* Estilos 3D para o Sidebar - Baseado na referência fornecida */
+
+/* Container principal do sidebar com efeito 3D */
+.app-sidebar {
+    background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 0 20px 20px 0;
+    box-shadow: 
+        8px 0 25px rgba(0, 0, 0, 0.1),
+        inset -2px 0 10px rgba(255, 255, 255, 0.8);
+    position: relative;
+    overflow: visible;
+}
+
+/* Efeito de elevação para o sidebar */
+.app-sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.7) 100%);
+    border-radius: 0 20px 20px 0;
+    z-index: -1;
+}
+
+/* Estilo para itens de menu inativos */
+.menu .menu-item .menu-link {
+    position: relative;
+    border-radius: 12px;
+    margin: 4px 8px;
+    padding: 12px 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
+    color: #6c757d;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+/* Hover effect para itens inativos */
+.menu .menu-item .menu-link:hover:not(.active) {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.8) 0%, rgba(248, 249, 250, 0.6) 100%);
+    color: #495057;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Estilo 3D para item ativo (Dashboard) */
+.menu .menu-item .menu-link.active {
+    background: linear-gradient(145deg, #e71d73 0%, #a01c7f 100%);
+    color: white !important;
+    border-radius: 12px;
+    margin: 4px 8px;
+    padding: 12px 16px;
+    position: relative;
+    transform: translateY(-2px);
+    box-shadow: 
+        0 8px 25px rgba(231, 29, 115, 0.4),
+        0 4px 15px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Efeito de profundidade adicional para item ativo */
+.menu .menu-item .menu-link.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
+    border-radius: 12px;
+    z-index: -1;
+}
+
+/* Ícones do menu ativo */
+.menu .menu-item .menu-link.active .menu-icon,
+.menu .menu-item .menu-link.active .menu-icon i {
+    color: white !important;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Título do menu ativo */
+.menu .menu-item .menu-link.active .menu-title {
+    color: white !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Ícones dos itens inativos */
+.menu .menu-item .menu-link .menu-icon,
+.menu .menu-item .menu-link .menu-icon i {
+    color: #6c757d;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect para ícones */
+.menu .menu-item .menu-link:hover:not(.active) .menu-icon,
+.menu .menu-item .menu-link:hover:not(.active) .menu-icon i {
+    color: #495057;
+    transform: scale(1.05);
+}
+
+/* Seção de configurações */
+.menu .menu-section {
+    color: #6c757d;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 20px 16px 8px 16px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(108, 117, 125, 0.2);
+    position: relative;
+}
+
+.menu .menu-section::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(108, 117, 125, 0.3) 50%, transparent 100%);
+}
+
+/* Efeito de animação suave para transições */
+.menu .menu-item {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Melhorias na responsividade */
+@media (max-width: 991.98px) {
+    .app-sidebar {
+        border-radius: 0;
+        box-shadow: 8px 0 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .menu .menu-item .menu-link {
+        margin: 2px 4px;
+        padding: 10px 12px;
+    }
+    
+    .menu .menu-item .menu-link.active {
+        margin: 2px 4px;
+        padding: 10px 12px;
+    }
+}
+
+/* Efeito de foco para acessibilidade */
+.menu .menu-item .menu-link:focus {
+    outline: 2px solid rgba(231, 29, 115, 0.3);
+    outline-offset: 2px;
+}
+
+/* Animação de entrada para novos itens */
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.menu .menu-item {
+    animation: slideInFromLeft 0.3s ease-out;
+}
+
+/* Delay escalonado para animação dos itens */
+.menu .menu-item:nth-child(1) { animation-delay: 0.1s; }
+.menu .menu-item:nth-child(2) { animation-delay: 0.2s; }
+.menu .menu-item:nth-child(3) { animation-delay: 0.3s; }
+.menu .menu-item:nth-child(4) { animation-delay: 0.4s; }
+.menu .menu-item:nth-child(5) { animation-delay: 0.5s; }
+.menu .menu-item:nth-child(6) { animation-delay: 0.6s; }
+.menu .menu-item:nth-child(7) { animation-delay: 0.7s; }
+.menu .menu-item:nth-child(8) { animation-delay: 0.8s; }

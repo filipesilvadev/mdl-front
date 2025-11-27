@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <title>Nome da Tela | Template</title>
+
+    <link rel="shortcut icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <link href="assets/css/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/custom-sidebar.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/sidebar-3d.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/submenu-modals.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="kt_app_body"
+      data-kt-app-layout="light-sidebar"
+      data-kt-app-header-fixed="true"
+      data-kt-app-sidebar-enabled="true"
+      data-kt-app-sidebar-fixed="true"
+      data-kt-app-sidebar-hoverable="true"
+      data-kt-app-sidebar-push-header="true"
+      data-kt-app-sidebar-push-toolbar="true"
+      data-kt-app-sidebar-push-footer="true"
+      data-kt-app-toolbar-enabled="true"
+      class="app-default antialiased">
+
+    <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+        <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+            <!-- Header -->
+            <div id="kt_app_header" class="app-header" data-kt-sticky="true" data-kt-sticky-activate="{default: true, lg: true}" data-kt-sticky-name="app-header-minimize" data-kt-sticky-offset="{default: '200px', lg: '0'}" data-kt-sticky-animation="false">
+                <div class="app-container container-fluid d-flex align-items-stretch justify-content-between" id="kt_app_header_container">
+                    <div class="d-flex align-items-center d-lg-none ms-n3 me-1 me-md-2" title="Show sidebar menu">
+                        <div class="btn btn-icon btn-active-color-primary w-35px h-35px" id="kt_app_sidebar_mobile_toggle">
+                            <i class="ki-duotone ki-abstract-14 fs-2 fs-md-1">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                            </i>
+                        </div>
+                    </div>
+
+                    <!-- Topnav básico -->
+                    <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
+                        <a href="#" class="d-lg-none">
+                            <img alt="Logo" src="assets/logo-icon.png" class="h-30px" />
+                        </a>
+                    </div>
+                    <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1" id="kt_app_header_wrapper">
+                        <div class="app-header-menu app-header-mobile-drawer align-items-stretch" data-kt-drawer="true" data-kt-drawer-name="app-header-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="250px" data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_app_header_menu_toggle" data-kt-swapper="true" data-kt-swapper-mode="{default: 'append', lg: 'prepend'}" data-kt-swapper-parent="{default: '#kt_app_body', lg: '#kt_app_header_wrapper'}"></div>
+
+                        <div class="app-navbar flex-shrink-0">
+                            <!-- Mercado de Leads -->
+                            <div class="app-navbar-item ms-1 ms-md-3">
+                                <div class="btn btn-light border py-2 px-5 rounded-pill" style="" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+                                    <i class="ki-duotone ki-shop" style="font-size: 2rem;">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                        <span class="path3"></span>
+                                        <span class="path4"></span>
+                                        <span class="path5"></span>
+                                    </i>
+                                    <span>Mercado de Leads</span>
+                                </div>
+                                <div class="menu menu-sub menu-sub-dropdown menu-column w-100 w-sm-250px" data-kt-menu="true">
+                                    <div class="card">
+                                        <div class="card-body p-0">
+                                            <div class="mh-450px scroll-y me-n5 pe-5">
+                                                <div class="row g-2">
+                                                    <div class="col-12">
+                                                        <div class="menu-item px-3 py-2">
+                                                            <a href="#" class="menu-link px-3 py-2 d-flex align-items-center">
+                                                                <i class="ki-duotone ki-shop fs-3 me-3">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                    <span class="path3"></span>
+                                                                    <span class="path4"></span>
+                                                                    <span class="path5"></span>
+                                                                </i>
+                                                                <span class="menu-title">Fornecedores</span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="menu-item px-3 py-2">
+                                                            <a href="#" class="menu-link px-3 py-2 d-flex align-items-center">
+                                                                <i class="ki-duotone ki-profile-user fs-3 me-3">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                    <span class="path3"></span>
+                                                                    <span class="path4"></span>
+                                                                </i>
+                                                                <span class="menu-title">Leads Adquiridos</span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="menu-item px-3 py-2">
+                                                            <a href="#" class="menu-link px-3 py-2 d-flex align-items-center">
+                                                                <i class="ki-duotone ki-wallet fs-3 me-3">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                    <span class="path3"></span>
+                                                                    <span class="path4"></span>
+                                                                </i>
+                                                                <span class="menu-title">Histórico e Transações</span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="menu-item px-3 py-2">
+                                                            <a href="#" class="menu-link px-3 py-2 d-flex align-items-center">
+                                                                <i class="ki-duotone ki-information-3 fs-3 me-3">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                    <span class="path3"></span>
+                                                                </i>
+                                                                <span class="menu-title">Contestação</span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="separator my-2" style="border-color: #e1e3ea; opacity: 0.5;"></div>
+                                                        <div class="menu-item px-3 py-2">
+                                                            <a href="#" class="menu-link px-3 py-2 d-flex align-items-center">
+                                                                <i class="ki-duotone ki-handcart fs-3 me-3" style="color: #e71d73;">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                    <span class="path3"></span>
+                                                                    <span class="path4"></span>
+                                                                    <span class="path5"></span>
+                                                                </i>
+                                                                <span class="menu-title" style="font-size: 1.1em;">Carrinho</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Menu do Usuário -->
+                            <div class="app-navbar-item ms-4 ms-md-5" id="kt_header_user_menu_toggle">
+                                <div class="cursor-pointer symbol symbol-circle symbol-md-40px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+                                    <img src="assets/images/avatars/blank.png" alt="user" />
+                                </div>
+                                <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
+                                    <div class="menu-item px-3">
+                                        <div class="menu-content d-flex align-items-center px-3">
+                                            <div class="symbol symbol-circle symbol-50px me-5">
+                                                <img class="border-active-danger" src="assets/images/avatars/blank.png" alt="user" />
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <div class="fw-bold d-flex align-items-center fs-5">
+                                                    Nome do Usuário
+                                                </div>
+                                                <span class="fw-semibold text-muted text-hover-primary fs-7">
+                                                    usuario@exemplo.com
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="separator my-2"></div>
+                                    <div class="menu-item px-5">
+                                        <a href="#" class="menu-link px-5">Perfil do usuário</a>
+                                    </div>
+                                    <div class="menu-item px-5 my-1">
+                                        <a href="#" class="menu-link px-5">
+                                            <span class="menu-title position-relative">
+                                                Meu Plano
+                                                <span class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0 d-flex align-items-center">
+                                                    Plano Básico
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="separator my-2"></div>
+                                    <div class="menu-item px-5">
+                                        <a class="text-danger menu-link px-5" href="#">
+                                            <i class="bx bx-power-off font-size-18 align-middle text-danger"></i>
+                                            <span class="text-danger m-1">Sair do sistema</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+                <!-- Sidebar -->
+                <div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="225px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
+                    <div class="app-sidebar-logo px-6 d-flex justify-content-center" id="kt_app_sidebar_logo">
+                        <a href="#">
+                            <img alt="Logo" src="assets/logo.png" class="h-50px app-sidebar-logo-default" />
+                            <img alt="Logo" src="assets/logo-icon.png" class="h-30px app-sidebar-logo-minimize" />
+                        </a>
+                        <div id="kt_app_sidebar_toggle" class="app-sidebar-toggle btn btn-icon btn-shadow btn-sm btn-color-muted btn-active-color-primary body-bg h-30px w-30px position-absolute top-50 start-100 translate-middle rotate" data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body" data-kt-toggle-name="app-sidebar-minimize">
+                            <i class="ki-duotone ki-double-left fs-2 rotate-180">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                            </i>
+                        </div>
+                    </div>
+                    <div class="app-sidebar-menu overflow-hidden flex-column-fluid">
+                        <div id="kt_app_sidebar_menu_wrapper" class="app-sidebar-wrapper hover-scroll-overlay-y my-5" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_app_sidebar_logo, #kt_app_sidebar_footer" data-kt-scroll-wrappers="#kt_app_sidebar_menu" data-kt-scroll-offset="5px" data-kt-scroll-save-state="true">
+                            <div class="menu menu-column menu-rounded menu-sub-indention px-3" id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false">
+                                <!-- Menu Dashboard -->
+                                <div class="menu-item">
+                                    <a href="Dashboard/index.html">
+                                        <span class="menu-link">
+                                            <span class="menu-icon">
+                                                <i class="ki-duotone ki-element-11 fs-2">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                    <span class="path3"></span>
+                                                    <span class="path4"></span>
+                                                </i>
+                                            </span>
+                                            <span class="menu-title">Dashboard</span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app-sidebar-footer flex-column-auto pt-2 pb-6 px-6" id="kt_app_sidebar_footer">
+                        <a href="#" class="btn btn-flex flex-center btn-custom btn-secondary overflow-hidden text-nowrap px-0 h-40px w-100">
+                            <i class="ki-duotone ki-message-question fs-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>
+                            <span class="btn-label">Suporte</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Main -->
+                <div class="app-main flex-column flex-row-fluid" id="kt_app_main" style="overflow-x: hidden">
+                    <!-- Toolbar -->
+                    <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+                        <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex flex-stack">
+                            <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+                                <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Título da Página</h1>
+                                <span class="text-muted">Subtítulo / descrição</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Conteúdo da página -->
+                    <div id="kt_app_content" class="app-content flex-column-fluid">
+                        <div class="app-container container-fluid">
+                            <!-- Coloque aqui o conteúdo da nova tela -->
+                        </div>
+                    </div>
+
+                    <!-- Footer opcional -->
+                    <!-- <div id="kt_app_footer" class="app-footer"> ... </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var hostUrl = "assets/";
+    </script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="alpinejs/marketplace-cart.js"></script>
+
+    <script src="assets/js/plugins.bundle.js"></script>
+    <script src="assets/js/scripts.bundle.js"></script>
+    <script src="assets/js/widgets.bundle.js"></script>
+
+    <!-- Espaço para JS específico da tela (caso necessário) -->
+    <!-- <script src="assets/js/minha-tela.js"></script> -->
+</body>
+
+</html>
+
+

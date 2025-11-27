@@ -1,0 +1,53 @@
+:root {
+    --bs-primary: #e71d73;
+    --bs-primary-light: #f7e3eb;
+    --bs-primary-active:  #a11753;
+    /**--bs-primary: #a01c7f;
+    --bs-primary-active: #7e1764;
+    **/
+    --bs-secondary: #EDCCE1;
+    --bs-font-sans-serif: "Poppins", sans-serif;
+
+    --bs-app-sidebar-light-menu-link-bg-color-active: rgb(231, 29, 115, 0.08);
+    --bs-app-sidebar-light-menu-link-color-active: var(--bs-primary);
+    --bs-app-sidebar-light-menu-icon-color-active: var(--bs-primary-active);
+}
+
+
+[data-kt-app-layout=light-sidebar] .app-sidebar .menu .menu-item .menu-link.active .menu-title {
+    color: var(--bs-app-sidebar-light-menu-link-color-active);
+    font-weight: 600!important;
+}
+
+[data-kt-app-layout=light-sidebar] .app-sidebar .menu .menu-item .menu-link.active .menu-icon, [data-kt-app-layout=light-sidebar] .app-sidebar .menu .menu-item .menu-link.active .menu-icon .svg-icon, [data-kt-app-layout=light-sidebar] .app-sidebar .menu .menu-item .menu-link.active .menu-icon i {
+    color: var(--bs-app-sidebar-light-menu-icon-color-active)
+}
+
+@media (min-width: 992px) {
+    .app-header {
+        transition: none;
+        z-index: 100;
+        background-color: var(--bs-app-header-minimize-bg-color);
+        /*box-shadow: var(--bs-app-header-minimize-box-shadow);*/
+        border-bottom: 1px solid var(--bs-gray-300);
+    }
+}
+
+.btn-check:active+.btn.btn-active-color-primary .svg-icon, .btn-check:active+.btn.btn-active-color-primary i, .btn-check:checked+.btn.btn-active-color-primary .svg-icon, .btn-check:checked+.btn.btn-active-color-primary i, .btn.btn-active-color-primary.active .svg-icon, .btn.btn-active-color-primary.active i, .btn.btn-active-color-primary.show .svg-icon, .btn.btn-active-color-primary.show i, .btn.btn-active-color-primary:active:not(.btn-active) .svg-icon, .btn.btn-active-color-primary:active:not(.btn-active) i, .btn.btn-active-color-primary:focus:not(.btn-active) .svg-icon, .btn.btn-active-color-primary:focus:not(.btn-active) i, .btn.btn-active-color-primary:hover:not(.btn-active) .svg-icon, .btn.btn-active-color-primary:hover:not(.btn-active) i, .show>.btn.btn-active-color-primary .svg-icon, .show>.btn.btn-active-color-primary i {
+    color: var(--bs-primary);
+}
+
+.kanban-title-board {
+    margin-bottom: 1rem;
+}
+
+.bg-gradient {
+    background: url('/assets/images/our-company-info__bg 1.png'), content-box radial-gradient(#e71d73, #a01c7f)!important;
+}
+
+@media (max-width: 992px) {
+.bg-gradient {
+    background: linear-gradient(45deg, #e71d73, #a01c7f)!important;
+}
+}
+

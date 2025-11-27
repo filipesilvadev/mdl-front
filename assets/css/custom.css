@@ -1,0 +1,22 @@
+/* Botões customizados globais */
+:root {
+  --btn-small-font-size: 0.8rem;
+  --btn-small-padding-y: 0.6rem;
+  --btn-small-padding-x: 0.8rem;
+  --btn-small-border-radius: 0.35rem;
+}
+
+.btn-small {
+  padding: var(--btn-small-padding-y) var(--btn-small-padding-x) !important;
+  font-size: var(--btn-small-font-size) !important;
+  line-height: 1.25 !important;
+  border-radius: var(--btn-small-border-radius) !important;
+}
+
+.btn-small .spinner-border {
+  width: 1rem;
+  height: 1rem;
+  border-width: 0.15em;
+}
+
+

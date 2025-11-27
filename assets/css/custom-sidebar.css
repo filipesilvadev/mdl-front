@@ -1,0 +1,21 @@
+.menu-item.menu-accordion .menu-link .menu-title {
+    font-weight: 500 !important;
+    font-size: 1.1rem;
+}
+
+.menu-item.menu-accordion .menu-link {
+    font-weight: 500 !important;
+}
+
+.menu .menu-item .menu-link .menu-title {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.menu .menu-item .menu-link {
+    font-weight: 500;
+}
+
+.menu .menu-item.menu-accordion .menu-link .menu-title {
+    font-weight: 500 !important;
+} 
