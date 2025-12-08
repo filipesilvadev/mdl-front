@@ -1,0 +1,54 @@
+.card-fornecedor {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #e4e6ef;
+}
+
+.card-fornecedor:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-fornecedor .card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-fornecedor .d-flex.h-100 {
+    align-items: stretch;
+}
+
+.card-fornecedor img.h-60px {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.gap-6 {
+    gap: 4rem !important;
+}
+
+.card-body .input-group {
+    border: 1px solid #dbdfe9 !important;
+    border-radius: 0.475rem !important;
+}
+
+.card-body .input-group .input-group-text {
+    border: 1px solid #dbdfe9 !important;
+    border-right: 1px solid #dbdfe9 !important;
+}
+
+.card-body .input-group #filtroBuscaFornecedor {
+    border: 1px solid #dbdfe9 !important;
+}
+
+.btn .ki-wallet {
+    color: #ffffff !important;
+}
+
+.btn .ki-wallet .path1,
+.btn .ki-wallet .path2,
+.btn .ki-wallet .path3,
+.btn .ki-wallet .path4 {
+    fill: #ffffff !important;
+    stroke: #ffffff !important;
+    opacity: 1 !important;
+}

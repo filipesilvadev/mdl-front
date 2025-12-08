@@ -1,0 +1,158 @@
+.card-lead {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #e4e6ef;
+}
+
+.card-lead:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.btn-check-lead.active,
+.btn-check-lead.active:hover,
+.btn-check-lead.active:focus,
+.btn.btn-light.active:active,
+.btn.btn-light.active,
+.btn.btn-light:focus:not(.btn-active) {
+    background-color: #ff007a !important;
+    border-color: #ff007a !important;
+    color: #ffffff !important;
+}
+
+.btn-check-lead.active i,
+.btn-check-lead.active .ki-duotone {
+    color: #ffffff !important;
+}
+
+.btn-check-lead.active .ki-duotone .path1,
+.btn-check-lead.active .ki-duotone .path2 {
+    fill: #ffffff !important;
+    stroke: #ffffff !important;
+}
+
+.btn-check-lead.active .ki-check .path1,
+.btn-check-lead.active .ki-check .path2 {
+    fill: #ffffff !important;
+    stroke: #ffffff !important;
+}
+
+.btn-check-lead.active * {
+    color: #ffffff !important;
+}
+
+.js-filtro-temp.btn-light i,
+.js-filtro-regra.btn-light i {
+    color: #495057 !important;
+}
+
+.carrinho-sidebar {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 450px;
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+    z-index: 1050;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.carrinho-sidebar.active {
+    right: 0;
+}
+
+.carrinho-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.carrinho-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.carrinho-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #e4e6ef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carrinho-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.5rem;
+}
+
+.carrinho-footer {
+    padding: 1.5rem;
+    border-top: 1px solid #e4e6ef;
+}
+
+.carrinho-item {
+    transition: opacity 0.2s ease;
+}
+
+.carrinho-item:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .carrinho-sidebar {
+        width: 100%;
+        right: -100%;
+    }
+}
+
+.btn .ki-wallet {
+    color: #ffffff !important;
+}
+
+.btn .ki-wallet .path1,
+.btn .ki-wallet .path2,
+.btn .ki-wallet .path3,
+.btn .ki-wallet .path4 {
+    fill: #ffffff !important;
+    stroke: #ffffff !important;
+    opacity: 1 !important;
+}
+
+.card-body .input-group {
+    border: 1px solid #dbdfe9 !important;
+    border-radius: 0.475rem !important;
+}
+
+.card-body .input-group .input-group-text {
+    border: none !important;
+    border-right: none !important;
+}
+
+.card-body .input-group #filtroBuscaLead {
+    border: none !important;
+}
+
+.btn-check-lead {
+    border: 1px solid #d1d5db !important;
+}
+
+.box-multiplos-leads {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1040;
+    border-top: 1px solid #e4e6ef;
+}

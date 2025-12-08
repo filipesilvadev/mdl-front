@@ -1,0 +1,12 @@
+// JS especifico para telas que usarem o modelo base
+// Copie este arquivo junto com o HTML correspondente para criar novas telas.
+
+
+
+
+
+
+
+
+
+

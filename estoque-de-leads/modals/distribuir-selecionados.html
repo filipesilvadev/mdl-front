@@ -1,0 +1,57 @@
+<div id="modal_distribuir_selecionados" class="distribuir-modal-overlay" style="display: none;">
+    <div class="distribuir-modal-dialog">
+        <div class="card shadow-sm">
+            <div class="card-header border-0 pb-0 d-flex justify-content-between align-items-center">
+                <h5 class="fw-bold mb-0">Distribuir Selecionados</h5>
+                <button type="button" class="btn btn-icon btn-sm btn-light" data-distribuir-close>
+                    <i class="ki-duotone ki-cross fs-2">
+                        <span class="path1"></span>
+                        <span class="path2"></span>
+                    </i>
+                </button>
+            </div>
+
+            <div class="card-body pt-4">
+                <div class="alert alert-info d-flex align-items-center py-3 px-4 mb-5">
+                    <i class="ki-duotone ki-briefcase fs-2 me-3">
+                        <span class="path1"></span>
+                        <span class="path2"></span>
+                    </i>
+                    <span class="fw-semibold">
+                        Apenas corretores com <span class="fw-bold">saldo</span>.
+                    </span>
+                </div>
+
+                <div class="mb-5">
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-end-0 ps-4">
+                            <i class="ki-duotone ki-magnifier fs-2 text-gray-500">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                            </i>
+                        </span>
+                        <input id="buscaCorretores" type="text" class="form-control form-control-solid border-start-0" placeholder="Buscar..." />
+                    </div>
+                </div>
+
+                <div class="distribuir-lista-corretores">
+                    <div class="d-flex justify-content-between align-items-center py-3 px-2 border-bottom">
+                        <div>
+                            <div class="fw-bold">Carlos Mendes</div>
+                            <div class="text-muted fs-7">Saldo: R$ 150,00</div>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-primary px-6">Enviar</button>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center py-3 px-2">
+                        <div>
+                            <div class="fw-bold">Ana Julia</div>
+                            <div class="text-muted fs-7">Saldo: R$ 85,00</div>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-primary px-6">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
