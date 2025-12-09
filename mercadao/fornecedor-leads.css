@@ -156,3 +156,17 @@
     z-index: 1040;
     border-top: 1px solid #e4e6ef;
 }
+
+/* Estilo para borrar nome do fornecedor para usuários não premium */
+.nome-fornecedor-blur {
+    filter: blur(4px);
+    user-select: none;
+    -webkit-user-select: none;
+    color: transparent;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+
+.nome-fornecedor-blur::selection {
+    background: transparent;
+}

@@ -3,16 +3,23 @@ document.addEventListener('DOMContentLoaded', function () {
     fornecedorAtual = urlParams.get('fornecedor') || 'sulamerica';
 
     var fornecedores = {
-        'sulamerica': { nome: 'SulAmérica', logo: '../assets/images/operatorslogos/sulamerica.png' },
-        'amil': { nome: 'Amil', logo: '../assets/images/operatorslogos/amil.png' },
-        'bradesco': { nome: 'Bradesco', logo: '../assets/images/operatorslogos/bradescosaude.png' },
-        'unimed': { nome: 'Unimed', logo: '' }
+        'sulamerica': { nome: 'LeadSource Pro', logo: '../assets/images/operatorslogos/sulamerica.png', premium: false },
+        'amil': { nome: 'HealthConnect Solutions', logo: '../assets/images/operatorslogos/amil.png', premium: false },
+        'bradesco': { nome: 'MedLeads Corporate', logo: '../assets/images/operatorslogos/bradescosaude.png', premium: true },
+        'unimed': { nome: 'Wellness Partners', logo: '', premium: false },
+        'havida': { nome: 'CareLink Network', logo: '../assets/images/operatorslogos/hapvida.png', premium: false },
+        'portosaude': { nome: 'PrimeHealth Leads', logo: '../assets/images/operatorslogos/portosaude.png', premium: true }
     };
 
     var fornecedorInfo = fornecedores[fornecedorAtual] || fornecedores['sulamerica'];
     var tituloFornecedor = document.getElementById('tituloFornecedor');
     if (tituloFornecedor) {
-        tituloFornecedor.textContent = 'Leads: ' + fornecedorInfo.nome;
+        var nomeExibido = fornecedorInfo.nome;
+        if (!fornecedorInfo.premium) {
+            tituloFornecedor.innerHTML = 'Leads: <span class="nome-fornecedor-blur">' + nomeExibido + '</span>';
+        } else {
+            tituloFornecedor.textContent = 'Leads: ' + nomeExibido;
+        }
     }
 
     var inputBuscaLead = document.getElementById('filtroBuscaLead');
