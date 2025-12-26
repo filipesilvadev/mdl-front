@@ -133,3 +133,159 @@
     opacity: 0.7;
 }
 
+/* Score Circle */
+.score-circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.score-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.score-value {
+    position: relative;
+    z-index: 1;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #009ef7;
+}
+
+/* Heatmap */
+.heatmap-container {
+}
+
+.heatmap-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.heatmap-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabelas de Preços */
+.table-bordered input.form-control-sm {
+    text-align: center;
+    font-weight: 600;
+}
+
+.table-bordered th {
+    background-color: #f5f8fa;
+    text-align: center;
+}
+
+.table-bordered td {
+    text-align: center;
+}
+
+/* Nav Tabs Custom */
+.nav-tabs .nav-link {
+    color: #5e6278;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 0.75rem 1.5rem;
+}
+
+.nav-tabs .nav-link:hover {
+    border-bottom-color: #e4e6ef;
+    color: #181c32;
+}
+
+.nav-tabs .nav-link.active {
+    color: #ff007a;
+    border-bottom-color: #ff007a;
+    background-color: transparent;
+}
+
+/* Recebimentos List */
+.recebimentos-list {
+    padding: 0;
+}
+
+.recebimento-item:last-child {
+    border-bottom: none !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.recebimento-icon {
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1faff;
+    border-radius: 0.475rem;
+}
+
+/* Badges Custom */
+.badge-light-primary {
+    background-color: #f1faff;
+    color: #009ef7;
+}
+
+.badge-light-warning {
+    background-color: #fff4cd;
+    color: #856404;
+}
+
+.badge-light-info {
+    background-color: #e1f5fe;
+    color: #0277bd;
+}
+
+.badge-light-secondary {
+    background-color: #f5f8fa;
+    color: #5e6278;
+}
+
+/* Background Colors */
+.bg-light-primary {
+    background-color: #f1faff !important;
+}
+
+.bg-light-warning {
+    background-color: #fff4cd !important;
+}
+
+.bg-light-success {
+    background-color: #e8f5e9 !important;
+}
+
+/* Alert Custom */
+.alert-light-info {
+    background-color: #e1f5fe;
+    border-color: #b3e5fc;
+    color: #0277bd;
+}
+
+/* Integration Item Enhanced */
+.integration-item .ms-13 {
+    margin-left: 3.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .score-circle {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .score-value {
+        font-size: 1.25rem;
+    }
+    
+    .heatmap-item {
+        margin-bottom: 1rem;
+    }
+}
+

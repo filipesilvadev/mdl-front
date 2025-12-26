@@ -144,6 +144,15 @@
                                     Dashboard Fornecedor
                                 </h1>
                             </div>
+                            <div class="d-flex align-items-center">
+                                <button class="btn btn-light fw-semibold fs-6" id="toggleFiltrosBtn">
+                                    <i class="ki-duotone ki-filter fs-5 me-2">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                    Filtros
+                                </button>
+                            </div>
                         </div>
                     </div>
 
@@ -168,76 +177,228 @@
                                 </div>
                             </div>
 
+                            <!-- Filtros de Dados -->
+                            <div class="card mb-6" id="filtrosCard" style="display: none;">
+                                <div class="card-header border-0 pt-6">
+                                    <h3 class="card-title fw-bold fs-4">Filtros de Dados</h3>
+                                    <div class="card-toolbar">
+                                        <button class="btn btn-sm btn-light-primary" id="resetFilters">
+                                            <i class="ki-duotone ki-arrows-circle fs-5">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                            Limpar Filtros
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <div class="row g-4">
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <label class="form-label fw-semibold">Região</label>
+                                            <select class="form-select form-select-solid" id="filterRegiao">
+                                                <option value="">Todos</option>
+                                                <option value="SP">São Paulo</option>
+                                                <option value="RJ">Rio de Janeiro</option>
+                                                <option value="MG">Minas Gerais</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <label class="form-label fw-semibold">Tipo de Lead</label>
+                                            <select class="form-select form-select-solid" id="filterTipoLead">
+                                                <option value="">Todos</option>
+                                                <option value="PF">Pessoa Física</option>
+                                                <option value="PME">Pequena e Média Empresa</option>
+                                                <option value="ADESAO">Adesão</option>
+                                                <option value="ODONTO">Odonto</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <label class="form-label fw-semibold">Fonte de Geração</label>
+                                            <select class="form-select form-select-solid" id="filterFonte">
+                                                <option value="">Todas</option>
+                                                <option value="META">Meta Ads</option>
+                                                <option value="GOOGLE">Google Ads</option>
+                                                <option value="LP">Landing Page</option>
+                                                <option value="EMAIL">E-mail</option>
+                                                <option value="AFILIADO">Afiliados</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <label class="form-label fw-semibold">Operadora</label>
+                                            <select class="form-select form-select-solid" id="filterOperadora">
+                                                <option value="">Todas</option>
+                                                <option value="UNIMED">Unimed</option>
+                                                <option value="AMIL">Amil</option>
+                                                <option value="HAPVIDA">Hapvida</option>
+                                                <option value="BRADESCO">Bradesco</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <label class="form-label fw-semibold">Campanha</label>
+                                            <input type="text" class="form-control form-control-solid" id="filterCampanha" placeholder="ID da Campanha">
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <label class="form-label fw-semibold">Modelo de Venda</label>
+                                            <select class="form-select form-select-solid" id="filterModeloVenda">
+                                                <option value="">Todos</option>
+                                                <option value="TEMPO_REAL">Tempo Real</option>
+                                                <option value="MERCADAO">Mercadão</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <label class="form-label fw-semibold">Data de Geração (De)</label>
+                                            <input type="date" class="form-control form-control-solid" id="filterDataInicio">
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <label class="form-label fw-semibold">Data de Geração (Até)</label>
+                                            <input type="date" class="form-control form-control-solid" id="filterDataFim">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Indicadores Principais -->
                             <div class="mb-6">
-                                <h2 class="fw-bold fs-3 mb-4">Visão Geral</h2>
+                                <h2 class="fw-bold fs-3 mb-4">Indicadores Principais</h2>
                                 <div class="row g-4">
-                                    <div class="col-12 col-md-6 col-lg-3">
+                                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                                         <div class="card h-100 stat-card">
                                             <div class="card-body p-6">
                                                 <div class="d-flex justify-content-between align-items-center mb-2">
                                                     <div>
-                                                        <div class="text-gray-600 fw-semibold fs-6">LEADS ENVIADOS (MÊS)</div>
-                                                        <div class="fw-bold fs-3x">1.240</div>
+                                                        <div class="text-gray-600 fw-semibold fs-6">LEADS INTEGRADOS</div>
+                                                        <div class="fw-bold fs-3x" id="metricLeadsIntegrados">1.240</div>
+                                                        <div class="text-gray-600 fs-7 mt-1" id="metricLeadsIntegradosDetalhe">Hoje: 45 | Mês: 1.240</div>
                                                     </div>
                                                     <i class="ki-duotone ki-send fs-4x text-primary">
                                                         <span class="path1"></span>
                                                         <span class="path2"></span>
                                                     </i>
                                                 </div>
-                                                <div class="d-flex align-items-center">
-                                                    <i class="ki-duotone ki-arrow-up fs-3 text-success me-2">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                                        <div class="card h-100 stat-card">
+                                            <div class="card-body p-6">
+                                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                                    <div>
+                                                        <div class="text-gray-600 fw-semibold fs-6">LEADS VENDIDOS</div>
+                                                        <div class="fw-bold fs-3x" id="metricLeadsVendidos">1.147</div>
+                                                        <div class="text-gray-600 fs-7 mt-1" id="metricLeadsVendidosDetalhe">92.5% do total</div>
+                                                    </div>
+                                                    <i class="ki-duotone ki-calendar-add fs-4x" style="color: #bd2735;">
                                                         <span class="path1"></span>
                                                         <span class="path2"></span>
+                                                        <span class="path3"></span>
+                                                        <span class="path4"></span>
+                                                        <span class="path5"></span>
+                                                        <span class="path6"></span>
                                                     </i>
-                                                    <span class="text-gray-600 fs-7">12% vs mês anterior</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="col-12 col-md-6 col-lg-3">
+                                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                                         <div class="card h-100 stat-card">
                                             <div class="card-body p-6">
                                                 <div class="d-flex justify-content-between align-items-center mb-2">
                                                     <div>
-                                                        <div class="text-gray-600 fw-semibold fs-6">TAXA DE APROVAÇÃO</div>
-                                                        <div class="fw-bold fs-3x">92.5%</div>
+                                                        <div class="text-gray-600 fw-semibold fs-6">LEADS VÁLIDOS</div>
+                                                        <div class="fw-bold fs-3x" id="metricLeadsValidos">1.147</div>
+                                                        <div class="text-gray-600 fs-7 mt-1" id="metricLeadsValidosDetalhe">Inválidos: 93</div>
                                                     </div>
                                                     <i class="ki-duotone ki-check-circle fs-4x text-success">
                                                         <span class="path1"></span>
                                                         <span class="path2"></span>
                                                     </i>
                                                 </div>
-                                                <div class="text-gray-600 fs-7">Meta: > 90%</div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="col-12 col-md-6 col-lg-3">
+                                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                                         <div class="card h-100 stat-card">
                                             <div class="card-body p-6">
                                                 <div class="d-flex justify-content-between align-items-center mb-2">
                                                     <div>
-                                                        <div class="text-gray-600 fw-semibold fs-6">CONTESTAÇÕES</div>
-                                                        <div class="fw-bold fs-3x" style="color: #bd2735;">4.2%</div>
+                                                        <div class="text-gray-600 fw-semibold fs-6">LEADS CONTESTADOS</div>
+                                                        <div class="fw-bold fs-3x" style="color: #bd2735;" id="metricLeadsContestados">52</div>
+                                                        <div class="text-gray-600 fs-7 mt-1" id="metricLeadsContestadosDetalhe">4.2% do total</div>
                                                     </div>
                                                     <i class="ki-duotone ki-abstract-11 fs-4x" style="color: #bd2735;">
                                                         <span class="path1"></span>
                                                         <span class="path2"></span>
                                                     </i>
                                                 </div>
-                                                <div class="text-gray-600 fs-7">Dentro do aceitável</div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="col-12 col-md-6 col-lg-3">
+                                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                                         <div class="card h-100 stat-card">
                                             <div class="card-body p-6">
                                                 <div class="d-flex justify-content-between align-items-center mb-2">
                                                     <div>
-                                                        <div class="text-gray-600 fw-semibold fs-6">RECEITA ESTIMADA</div>
-                                                        <div class="fw-bold fs-3x" style="color: #ff007a;">R$ 18.4k</div>
+                                                        <div class="text-gray-600 fw-semibold fs-6">TAXA DE CONTESTAÇÃO</div>
+                                                        <div class="fw-bold fs-3x" style="color: #bd2735;" id="metricTaxaContestacao">4.2%</div>
+                                                        <div class="text-gray-600 fs-7 mt-1" id="metricTaxaContestacaoDetalhe">Média plataforma: 3.8%</div>
+                                                    </div>
+                                                    <i class="ki-duotone ki-percentage fs-4x" style="color: #bd2735;">
+                                                        <span class="path1"></span>
+                                                        <span class="path2"></span>
+                                                    </i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                                        <div class="card h-100 stat-card">
+                                            <div class="card-body p-6">
+                                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                                    <div>
+                                                        <div class="text-gray-600 fw-semibold fs-6">TAXA DE INVALIDAÇÃO</div>
+                                                        <div class="fw-bold fs-3x" style="color: #f59e0b;" id="metricTaxaInvalidacao">38.5%</div>
+                                                        <div class="text-gray-600 fs-7 mt-1" id="metricTaxaInvalidacaoDetalhe">20 de 52 contestações</div>
+                                                    </div>
+                                                    <i class="ki-duotone ki-cross-circle fs-4x" style="color: #f59e0b;">
+                                                        <span class="path1"></span>
+                                                        <span class="path2"></span>
+                                                    </i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                                        <div class="card h-100 stat-card">
+                                            <div class="card-body p-6">
+                                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                                    <div>
+                                                        <div class="text-gray-600 fw-semibold fs-6">PREÇO MÉDIO/LEAD</div>
+                                                        <div class="fw-bold fs-3x" style="color: #ff007a;" id="metricPrecoMedio">R$ 16,05</div>
+                                                        <div class="text-gray-600 fs-7 mt-1" id="metricPrecoMedioDetalhe">Variação: ±2.3%</div>
+                                                    </div>
+                                                    <i class="ki-duotone ki-dollar fs-4x" style="color: #ff007a;">
+                                                        <span class="path1"></span>
+                                                        <span class="path2"></span>
+                                                    </i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                                        <div class="card h-100 stat-card">
+                                            <div class="card-body p-6">
+                                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                                    <div>
+                                                        <div class="text-gray-600 fw-semibold fs-6">RECEITA TOTAL</div>
+                                                        <div class="fw-bold fs-3x" style="color: #ff007a;" id="metricReceitaTotal">R$ 18.4k</div>
+                                                        <div class="text-gray-600 fs-7 mt-1" id="metricReceitaTotalDetalhe">A receber: R$ 4.2k</div>
                                                     </div>
                                                     <i class="ki-duotone ki-wallet fs-4x" style="color: #ff007a;">
                                                         <span class="path1"></span>
@@ -246,90 +407,867 @@
                                                         <span class="path4"></span>
                                                     </i>
                                                 </div>
-                                                <div class="text-gray-600 fs-7">A receber: R$ 4.2k</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                                        <div class="card h-100 stat-card">
+                                            <div class="card-body p-6">
+                                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                                    <div>
+                                                        <div class="text-gray-600 fw-semibold fs-6">RANKING INTERNO</div>
+                                                        <div class="fw-bold fs-3x">#12</div>
+                                                        <div class="text-gray-600 fs-7 mt-1">de 156 fornecedores</div>
+                                                    </div>
+                                                    <i class="ki-duotone ki-ranking fs-4x" style="color: #1e3a5f;">
+                                                        <span class="path1"></span>
+                                                        <span class="path2"></span>
+                                                        <span class="path3"></span>
+                                                        <span class="path4"></span>
+                                                    </i>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="row g-4">
-                                <div class="col-12 col-lg-8">
+                            <!-- Indicadores de Qualidade e Risco -->
+                            <div class="card mb-6">
+                                <div class="card-header border-0 pt-6">
+                                    <h3 class="card-title fw-bold fs-4">Saúde da Operação</h3>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <div class="row g-4">
+                                        <div class="col-12 col-md-6 col-lg-4">
+                                            <div class="d-flex align-items-center p-4 bg-light-primary rounded h-100">
+                                                <div class="flex-grow-1">
+                                                    <div class="text-gray-600 fw-semibold fs-6 mb-1">SCORE INTERNO</div>
+                                                    <div class="fw-bold fs-2x">8.4/10</div>
+                                                    <div class="text-gray-600 fs-7">Bom desempenho</div>
+                                                </div>
+                                                <div class="score-circle">
+                                                    <div class="score-value">84%</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-4">
+                                            <div class="d-flex align-items-center p-4 bg-light-warning rounded h-100">
+                                                <div class="flex-grow-1">
+                                                    <div class="text-gray-600 fw-semibold fs-6 mb-1">HISTÓRICO DE PROBLEMAS</div>
+                                                    <div class="fw-bold fs-2x">3 incidentes</div>
+                                                    <div class="text-gray-600 fs-7">Último: há 15 dias</div>
+                                                </div>
+                                                <i class="ki-duotone ki-information fs-4x text-warning">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                    <span class="path3"></span>
+                                                </i>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-4">
+                                            <div class="d-flex align-items-center p-4 bg-light-success rounded h-100">
+                                                <div class="flex-grow-1">
+                                                    <div class="text-gray-600 fw-semibold fs-6 mb-1">SISTEMA DE ALERTAS</div>
+                                                    <div class="fw-bold fs-2x">Sem alertas</div>
+                                                    <div class="text-gray-600 fs-7">Tudo operando normalmente</div>
+                                                </div>
+                                                <i class="ki-duotone ki-check-circle fs-4x text-success">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                </i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Gráficos e Análises Estratégicas -->
+                            <div class="row g-4 mb-6">
+                                <div class="col-12 col-lg-6">
                                     <div class="card">
                                         <div class="card-header border-0 pt-6">
-                                            <div class="card-title">
-                                                <h3 class="fw-bold fs-4 mb-0" id="chartTitle">Performance de Envios (Últimos 7 dias)</h3>
-                                            </div>
-                                            <div class="card-toolbar">
-                                                <select id="periodFilter" class="form-select form-select-solid" style="width: auto;">
-                                                    <option value="7">Últimos 7 dias</option>
-                                                    <option value="30">Últimos 30 dias</option>
-                                                    <option value="90">Últimos 90 dias</option>
-                                                </select>
-                                            </div>
+                                            <h3 class="card-title fw-bold fs-4 mb-0">Comparativo entre Fontes de Geração</h3>
                                         </div>
                                         <div class="card-body pt-0">
                                             <div class="chart-container">
-                                                <canvas id="performanceChart"></canvas>
+                                                <canvas id="fonteGeracaoChart"></canvas>
                                             </div>
-                                            <div class="d-flex justify-content-center gap-4 mt-4" id="chartLegend"></div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="col-12 col-lg-4">
+                                <div class="col-12 col-lg-6">
                                     <div class="card">
                                         <div class="card-header border-0 pt-6">
-                                            <div class="card-title">
-                                                <h3 class="fw-bold fs-4 mb-0">Saúde das Integrações</h3>
+                                            <h3 class="card-title fw-bold fs-4 mb-0">Desempenho por Campanha</h3>
+                                        </div>
+                                        <div class="card-body pt-0">
+                                            <div class="chart-container">
+                                                <canvas id="campanhaChart"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-header border-0 pt-6">
+                                            <h3 class="card-title fw-bold fs-4 mb-0">Tendências e Sazonalidade</h3>
+                                            <div class="card-toolbar">
+                                                <select id="tendenciaPeriodFilter" class="form-select form-select-solid" style="width: auto;">
+                                                    <option value="dia">Por Dia</option>
+                                                    <option value="semana">Por Semana</option>
+                                                    <option value="mes">Por Mês</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="card-body pt-0">
-                                            <div class="integration-item mb-4">
-                                                <div class="d-flex align-items-center mb-2">
-                                                    <div class="integration-icon me-3">
-                                                        <span class="fw-bold fs-4" style="color: #1877f2;">f</span>
+                                            <div class="chart-container" style="height: 400px;">
+                                                <canvas id="tendenciaChart"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-header border-0 pt-6">
+                                            <h3 class="card-title fw-bold fs-4 mb-0">Heatmap de Regiões</h3>
+                                        </div>
+                                        <div class="card-body pt-0">
+                                            <div id="heatmapRegioes" class="heatmap-container">
+                                                <div class="row g-3">
+                                                    <div class="col-12 col-md-6 col-lg-4">
+                                                        <div class="heatmap-item p-4 bg-light-primary rounded">
+                                                            <div class="fw-bold fs-5 mb-2">São Paulo</div>
+                                                            <div class="text-gray-800 fs-7 mb-1 d-flex align-items-center">
+                                                                <i class="ki-duotone ki-check-circle fs-6 text-gray-800 me-2">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                </i>
+                                                                Leads Válidos: 420
+                                                            </div>
+                                                            <div class="text-gray-800 fs-7 mb-1 d-flex align-items-center">
+                                                                <i class="ki-duotone ki-abstract-11 fs-6 text-gray-800 me-2">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                </i>
+                                                                Contestações: 18 (4.3%)
+                                                            </div>
+                                                            <div class="text-gray-800 fs-7 d-flex align-items-center">
+                                                                <i class="ki-duotone ki-verify fs-6 text-gray-800 me-2">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                </i>
+                                                                Operadora Preferida: Unimed
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="flex-grow-1">
-                                                        <div class="fw-semibold fs-6 mb-1">Meta Ads (Principal)</div>
-                                                        <div class="text-gray-600 fs-7">Último envio: Há 2 min</div>
+                                                    <div class="col-12 col-md-6 col-lg-4">
+                                                        <div class="heatmap-item p-4 bg-light-success rounded">
+                                                            <div class="fw-bold fs-5 mb-2">Rio de Janeiro</div>
+                                                            <div class="text-gray-800 fs-7 mb-1 d-flex align-items-center">
+                                                                <i class="ki-duotone ki-check-circle fs-6 text-gray-800 me-2">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                </i>
+                                                                Leads Válidos: 285
+                                                            </div>
+                                                            <div class="text-gray-800 fs-7 mb-1 d-flex align-items-center">
+                                                                <i class="ki-duotone ki-abstract-11 fs-6 text-gray-800 me-2">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                </i>
+                                                                Contestações: 8 (2.8%)
+                                                            </div>
+                                                            <div class="text-gray-800 fs-7 d-flex align-items-center">
+                                                                <i class="ki-duotone ki-verify fs-6 text-gray-800 me-2">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                </i>
+                                                                Operadora Preferida: Amil
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <span class="badge badge-light-success">Conectado</span>
+                                                    <div class="col-12 col-md-6 col-lg-4">
+                                                        <div class="heatmap-item p-4 bg-light-warning rounded">
+                                                            <div class="fw-bold fs-5 mb-2">Minas Gerais</div>
+                                                            <div class="text-gray-800 fs-7 mb-1 d-flex align-items-center">
+                                                                <i class="ki-duotone ki-check-circle fs-6 text-gray-800 me-2">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                </i>
+                                                                Leads Válidos: 198
+                                                            </div>
+                                                            <div class="text-gray-800 fs-7 mb-1 d-flex align-items-center">
+                                                                <i class="ki-duotone ki-abstract-11 fs-6 text-gray-800 me-2">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                </i>
+                                                                Contestações: 12 (6.1%)
+                                                            </div>
+                                                            <div class="text-gray-800 fs-7 d-flex align-items-center">
+                                                                <i class="ki-duotone ki-verify fs-6 text-gray-800 me-2">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                </i>
+                                                                Operadora Preferida: Hapvida
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                                            <div class="integration-item mb-4">
-                                                <div class="d-flex align-items-center mb-2">
-                                                    <div class="integration-icon me-3">
-                                                        <span class="fw-bold fs-4" style="color: #4285f4;">G</span>
-                                                    </div>
-                                                    <div class="flex-grow-1">
-                                                        <div class="fw-semibold fs-6 mb-1">Google Ads LP</div>
-                                                        <div class="text-gray-600 fs-7">Último envio: Há 15 min</div>
-                                                    </div>
-                                                    <span class="badge badge-light-success">Conectado</span>
+                            <!-- Abas para seções adicionais -->
+                            <ul class="nav nav-tabs nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold mb-6" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#painel-financeiro">Painel Financeiro</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#estoque-leads">Estoque de Leads</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#integracoes">Integrações</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#tabelas-precos">Tabelas de Preços</a>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content" id="myTabContent">
+                                <!-- Painel Financeiro -->
+                                <div class="tab-pane fade show active" id="painel-financeiro" role="tabpanel">
+                                    <div class="row g-4 mb-6">
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="card h-100">
+                                                <div class="card-body p-6">
+                                                    <div class="text-gray-600 fw-semibold fs-6 mb-2">SALDO EM CUSTÓDIA</div>
+                                                    <div class="fw-bold fs-2x text-warning">R$ 4.200,00</div>
+                                                    <div class="text-gray-600 fs-7 mt-2">Liberação em 7 dias</div>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="card h-100">
+                                                <div class="card-body p-6">
+                                                    <div class="text-gray-600 fw-semibold fs-6 mb-2">SALDO DISPONÍVEL</div>
+                                                    <div class="fw-bold fs-2x text-success">R$ 14.200,00</div>
+                                                    <div class="text-gray-600 fs-7 mt-2">Pronto para saque</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="card h-100">
+                                                <div class="card-body p-6">
+                                                    <div class="text-gray-600 fw-semibold fs-6 mb-2">TOTAL FATURADO</div>
+                                                    <div class="fw-bold fs-2x" style="color: #ff007a;">R$ 18.400,00</div>
+                                                    <div class="text-gray-600 fs-7 mt-2">Este mês</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <div class="card h-100">
+                                                <div class="card-body p-6">
+                                                    <div class="text-gray-600 fw-semibold fs-6 mb-2">TAXAS E DESCONTOS</div>
+                                                    <div class="fw-bold fs-2x text-danger">-R$ 1.840,00</div>
+                                                    <div class="text-gray-600 fs-7 mt-2">10% da plataforma</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                            <div class="integration-item mb-4">
-                                                <div class="d-flex align-items-center mb-2">
-                                                    <div class="integration-icon me-3">
-                                                        <i class="ki-duotone ki-code fs-2x text-gray-600">
+                                    <div class="row g-4">
+                                        <div class="col-12 col-lg-8">
+                                            <div class="card">
+                                                <div class="card-header border-0 pt-6">
+                                                    <h3 class="card-title fw-bold fs-4 mb-0">Extrato Financeiro</h3>
+                                                </div>
+                                                <div class="card-body pt-0">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
+                                                            <thead>
+                                                                <tr class="fw-bold text-muted">
+                                                                    <th>Data</th>
+                                                                    <th>Descrição</th>
+                                                                    <th>Tipo</th>
+                                                                    <th class="text-end">Valor</th>
+                                                                    <th class="text-end">Status</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>15/01/2024</td>
+                                                                    <td>Venda de Leads - 45 unidades</td>
+                                                                    <td><span class="badge badge-light-success">Venda</span></td>
+                                                                    <td class="text-end fw-bold text-success">+R$ 720,00</td>
+                                                                    <td class="text-end"><span class="badge badge-light-warning">Em custódia</span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>14/01/2024</td>
+                                                                    <td>Liberação de custódia</td>
+                                                                    <td><span class="badge badge-light-primary">Liberação</span></td>
+                                                                    <td class="text-end fw-bold text-success">+R$ 1.200,00</td>
+                                                                    <td class="text-end"><span class="badge badge-light-success">Disponível</span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>13/01/2024</td>
+                                                                    <td>Taxa da plataforma (10%)</td>
+                                                                    <td><span class="badge badge-light-danger">Taxa</span></td>
+                                                                    <td class="text-end fw-bold text-danger">-R$ 120,00</td>
+                                                                    <td class="text-end"><span class="badge badge-light-secondary">Processado</span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>12/01/2024</td>
+                                                                    <td>Estorno - Lead contestado</td>
+                                                                    <td><span class="badge badge-light-warning">Estorno</span></td>
+                                                                    <td class="text-end fw-bold text-danger">-R$ 16,05</td>
+                                                                    <td class="text-end"><span class="badge badge-light-secondary">Processado</span></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-4">
+                                            <div class="card">
+                                                <div class="card-header border-0 pt-6">
+                                                    <h3 class="card-title fw-bold fs-4 mb-0">Previsão de Recebimentos</h3>
+                                                </div>
+                                                <div class="card-body pt-0">
+                                                    <div class="recebimentos-list">
+                                                        <div class="recebimento-item d-flex align-items-center mb-4 pb-4 border-bottom">
+                                                            <div class="recebimento-icon me-3">
+                                                                <i class="ki-duotone ki-calendar fs-2x text-primary">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                </i>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <div class="fw-bold fs-6 mb-1">22/01/2024</div>
+                                                                <div class="text-gray-600 fs-7">R$ 4.200,00</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="recebimento-item d-flex align-items-center">
+                                                            <div class="recebimento-icon me-3">
+                                                                <i class="ki-duotone ki-calendar fs-2x text-primary">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                </i>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <div class="fw-bold fs-6 mb-1">29/01/2024</div>
+                                                                <div class="text-gray-600 fs-7">R$ 2.800,00</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Estoque de Leads -->
+                                <div class="tab-pane fade" id="estoque-leads" role="tabpanel">
+                                    <div class="card">
+                                        <div class="card-header border-0 pt-6">
+                                            <h3 class="card-title fw-bold fs-4 mb-0">Leads em Estoque</h3>
+                                            <div class="card-toolbar">
+                                                <button class="btn btn-sm btn-light-primary me-2">
+                                                    <i class="ki-duotone ki-file-down fs-5">
+                                                        <span class="path1"></span>
+                                                        <span class="path2"></span>
+                                                    </i>
+                                                    Exportar Excel
+                                                </button>
+                                                <button class="btn btn-sm btn-primary">
+                                                    <i class="ki-duotone ki-arrows-circle fs-5">
+                                                        <span class="path1"></span>
+                                                        <span class="path2"></span>
+                                                    </i>
+                                                    Enviar para Mercadão
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="card-body pt-0">
+                                            <div class="table-responsive">
+                                                <table class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
+                                                    <thead>
+                                                        <tr class="fw-bold text-muted">
+                                                            <th>ID</th>
+                                                            <th>Data Geração</th>
+                                                            <th>Tipo</th>
+                                                            <th>Região</th>
+                                                            <th>Fonte</th>
+                                                            <th>Motivo</th>
+                                                            <th class="text-end">Ações</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>#12345</td>
+                                                            <td>15/01/2024 14:30</td>
+                                                            <td><span class="badge badge-light-primary">PF</span></td>
+                                                            <td>São Paulo - SP</td>
+                                                            <td>Meta Ads</td>
+                                                            <td><span class="badge badge-light-warning">Fora do horário</span></td>
+                                                            <td class="text-end">
+                                                                <button class="btn btn-sm btn-light-primary me-2">Distribuir</button>
+                                                                <button class="btn btn-sm btn-light">Ver</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>#12344</td>
+                                                            <td>15/01/2024 14:25</td>
+                                                            <td><span class="badge badge-light-info">PME</span></td>
+                                                            <td>Rio de Janeiro - RJ</td>
+                                                            <td>Google Ads</td>
+                                                            <td><span class="badge badge-light-danger">Nenhum corretor apto</span></td>
+                                                            <td class="text-end">
+                                                                <button class="btn btn-sm btn-light-primary me-2">Distribuir</button>
+                                                                <button class="btn btn-sm btn-light">Ver</button>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Integrações -->
+                                <div class="tab-pane fade" id="integracoes" role="tabpanel">
+                                    <div class="row g-4">
+                                        <div class="col-12 col-lg-8">
+                                            <div class="card">
+                                                <div class="card-header border-0 pt-6">
+                                                    <h3 class="card-title fw-bold fs-4 mb-0">Status das Integrações</h3>
+                                                </div>
+                                                <div class="card-body pt-0">
+                                                    <div class="integration-item mb-4">
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <div class="integration-icon me-3">
+                                                                <span class="fw-bold fs-4" style="color: #1877f2;">f</span>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <div class="fw-semibold fs-6 mb-1">Meta Ads (Principal)</div>
+                                                                <div class="text-gray-600 fs-7">Último envio: Há 2 min | Total: 1.240 leads</div>
+                                                            </div>
+                                                            <span class="badge badge-light-success me-3">Conectado</span>
+                                                            <button class="btn btn-sm btn-light-primary">Configurar</button>
+                                                        </div>
+                                                        <div class="ms-13">
+                                                            <div class="text-gray-600 fs-7 mb-1">
+                                                                <i class="ki-duotone ki-check-circle fs-6 text-success">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                </i>
+                                                                Conexão estável
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="integration-item mb-4">
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <div class="integration-icon me-3">
+                                                                <span class="fw-bold fs-4" style="color: #4285f4;">G</span>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <div class="fw-semibold fs-6 mb-1">Google Ads LP</div>
+                                                                <div class="text-gray-600 fs-7">Último envio: Há 15 min | Total: 856 leads</div>
+                                                            </div>
+                                                            <span class="badge badge-light-success me-3">Conectado</span>
+                                                            <button class="btn btn-sm btn-light-primary">Configurar</button>
+                                                        </div>
+                                                        <div class="ms-13">
+                                                            <div class="text-gray-600 fs-7 mb-1">
+                                                                <i class="ki-duotone ki-check-circle fs-6 text-success">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                </i>
+                                                                Conexão estável
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="integration-item mb-4">
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <div class="integration-icon me-3">
+                                                                <i class="ki-duotone ki-code fs-2x text-gray-600">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                </i>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <div class="fw-semibold fs-6 mb-1">Webhook CRM</div>
+                                                                <div class="text-danger fs-7">Falha de Autenticação | Último envio: Há 2 horas</div>
+                                                            </div>
+                                                            <span class="badge badge-light-danger me-3">Erro</span>
+                                                            <button class="btn btn-sm btn-light-primary">Configurar</button>
+                                                        </div>
+                                                        <div class="ms-13">
+                                                            <div class="text-danger fs-7 mb-1">
+                                                                <i class="ki-duotone ki-information fs-6 text-danger">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                    <span class="path3"></span>
+                                                                </i>
+                                                                Token expirado - Renovar autenticação
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-4">
+                                            <div class="card">
+                                                <div class="card-header border-0 pt-6">
+                                                    <h3 class="card-title fw-bold fs-4 mb-0">Teste de Integração</h3>
+                                                </div>
+                                                <div class="card-body pt-0">
+                                                    <div class="mb-4">
+                                                        <label class="form-label fw-semibold">Selecione a Integração</label>
+                                                        <select class="form-select form-select-solid">
+                                                            <option>Meta Ads</option>
+                                                            <option>Google Ads</option>
+                                                            <option>Webhook CRM</option>
+                                                        </select>
+                                                    </div>
+                                                    <button class="btn btn-primary w-100 fw-semibold">
+                                                        <i class="ki-duotone ki-send fs-5">
                                                             <span class="path1"></span>
                                                             <span class="path2"></span>
                                                         </i>
+                                                        Enviar Lead de Teste
+                                                    </button>
+                                                    <div class="alert alert-light-info mt-4">
+                                                        <div class="fw-semibold fs-7 mb-1">Histórico de Erros</div>
+                                                        <div class="text-gray-600 fs-7">Últimas 24h: 3 erros</div>
+                                                        <button class="btn btn-sm btn-light-primary mt-2">Ver Logs</button>
                                                     </div>
-                                                    <div class="flex-grow-1">
-                                                        <div class="fw-semibold fs-6 mb-1">Webhook CRM</div>
-                                                        <div class="text-danger fs-7">Falha de Autenticação</div>
-                                                    </div>
-                                                    <span class="badge badge-light-danger">Erro</span>
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                            <button class="btn btn-primary w-100 fw-semibold">
-                                                Gerenciar Integrações
-                                            </button>
+                                <!-- Tabelas de Preços -->
+                                <div class="tab-pane fade" id="tabelas-precos" role="tabpanel">
+                                    <div class="card">
+                                        <div class="card-header border-0 pt-6">
+                                            <h3 class="card-title fw-bold fs-4 mb-0">Configuração de Tabelas de Preços</h3>
+                                            <div class="card-toolbar">
+                                                <button class="btn btn-primary fw-semibold">
+                                                    <i class="ki-duotone ki-check fs-5">
+                                                        <span class="path1"></span>
+                                                        <span class="path2"></span>
+                                                    </i>
+                                                    Salvar Alterações
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="card-body pt-0">
+                                            <ul class="nav nav-tabs nav-line-tabs nav-line-tabs-2x border-transparent fs-6 fw-bold mb-6" role="tablist">
+                                                <li class="nav-item" role="presentation">
+                                                    <a class="nav-link active" data-bs-toggle="tab" href="#preco-tempo-real">Tempo Real</a>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <a class="nav-link" data-bs-toggle="tab" href="#preco-fervendo">Fervendo</a>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <a class="nav-link" data-bs-toggle="tab" href="#preco-quente">Quente</a>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <a class="nav-link" data-bs-toggle="tab" href="#preco-morno">Morno</a>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <a class="nav-link" data-bs-toggle="tab" href="#preco-frio">Frio</a>
+                                                </li>
+                                            </ul>
+
+                                            <div class="tab-content">
+                                                <div class="tab-pane fade show active" id="preco-tempo-real" role="tabpanel">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered align-middle">
+                                                            <thead>
+                                                                <tr class="fw-bold">
+                                                                    <th>Tipo de Lead</th>
+                                                                    <th>DDD 11</th>
+                                                                    <th>DDD 21</th>
+                                                                    <th>DDD 31</th>
+                                                                    <th>DDD 41</th>
+                                                                    <th>DDD 48</th>
+                                                                    <th>Outros DDDs</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="fw-semibold">PF</td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="18.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="17.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="16.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="15.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="14.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="13.00" step="0.01"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="fw-semibold">PME</td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="25.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="23.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="22.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="20.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="19.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="17.50" step="0.01"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="fw-semibold">Adesão</td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="20.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="18.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="17.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="16.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="15.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="14.00" step="0.01"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="fw-semibold">Odonto</td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="22.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="20.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="19.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="17.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="16.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="15.00" step="0.01"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="preco-fervendo" role="tabpanel">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered align-middle">
+                                                            <thead>
+                                                                <tr class="fw-bold">
+                                                                    <th>Tipo de Lead</th>
+                                                                    <th>DDD 11</th>
+                                                                    <th>DDD 21</th>
+                                                                    <th>DDD 31</th>
+                                                                    <th>DDD 41</th>
+                                                                    <th>DDD 48</th>
+                                                                    <th>Outros DDDs</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="fw-semibold">PF</td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="15.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="14.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="13.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="12.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="12.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="11.00" step="0.01"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="fw-semibold">PME</td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="20.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="19.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="18.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="17.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="16.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="15.00" step="0.01"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="fw-semibold">Adesão</td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="16.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="15.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="14.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="13.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="13.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="12.00" step="0.01"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="fw-semibold">Odonto</td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="18.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="17.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="16.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="15.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="14.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="13.50" step="0.01"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="preco-quente" role="tabpanel">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered align-middle">
+                                                            <thead>
+                                                                <tr class="fw-bold">
+                                                                    <th>Tipo de Lead</th>
+                                                                    <th>DDD 11</th>
+                                                                    <th>DDD 21</th>
+                                                                    <th>DDD 31</th>
+                                                                    <th>DDD 41</th>
+                                                                    <th>DDD 48</th>
+                                                                    <th>Outros DDDs</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="fw-semibold">PF</td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="12.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="11.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="10.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="10.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="9.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="9.00" step="0.01"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="fw-semibold">PME</td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="16.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="15.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="14.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="14.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="13.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="13.00" step="0.01"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="fw-semibold">Adesão</td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="13.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="12.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="12.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="11.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="11.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="10.50" step="0.01"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="fw-semibold">Odonto</td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="14.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="14.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="13.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="13.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="12.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="12.00" step="0.01"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="preco-morno" role="tabpanel">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered align-middle">
+                                                            <thead>
+                                                                <tr class="fw-bold">
+                                                                    <th>Tipo de Lead</th>
+                                                                    <th>DDD 11</th>
+                                                                    <th>DDD 21</th>
+                                                                    <th>DDD 31</th>
+                                                                    <th>DDD 41</th>
+                                                                    <th>DDD 48</th>
+                                                                    <th>Outros DDDs</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="fw-semibold">PF</td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="9.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="8.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="8.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="7.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="7.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="6.50" step="0.01"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="fw-semibold">PME</td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="12.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="11.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="11.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="10.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="10.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="9.50" step="0.01"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="fw-semibold">Adesão</td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="10.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="9.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="9.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="8.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="8.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="7.50" step="0.01"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="fw-semibold">Odonto</td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="11.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="10.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="10.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="9.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="9.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="8.50" step="0.01"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="preco-frio" role="tabpanel">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered align-middle">
+                                                            <thead>
+                                                                <tr class="fw-bold">
+                                                                    <th>Tipo de Lead</th>
+                                                                    <th>DDD 11</th>
+                                                                    <th>DDD 21</th>
+                                                                    <th>DDD 31</th>
+                                                                    <th>DDD 41</th>
+                                                                    <th>DDD 48</th>
+                                                                    <th>Outros DDDs</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="fw-semibold">PF</td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="6.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="6.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="5.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="5.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="4.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="4.00" step="0.01"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="fw-semibold">PME</td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="9.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="8.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="8.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="7.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="7.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="6.50" step="0.01"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="fw-semibold">Adesão</td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="7.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="7.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="6.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="6.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="5.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="5.00" step="0.01"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="fw-semibold">Odonto</td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="8.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="8.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="7.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="7.00" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="6.50" step="0.01"></td>
+                                                                    <td><input type="number" class="form-control form-control-sm" value="6.00" step="0.01"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
