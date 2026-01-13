@@ -1,0 +1,271 @@
+/* Estilos específicos para a tela de Contestar Lead */
+
+/* Header - Destaque do ID do Lead */
+.lead-id-highlight {
+    color: #D72077;
+}
+
+/* Tag de tempo recebido - cores customizadas */
+.badge-tempo-recebido i .path1,
+.badge-tempo-recebido i .path2 {
+    fill: #4d493b !important;
+}
+
+/* Seção de Contestação */
+.contestacao-header {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e4e6ef;
+}
+
+.section-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff5f9;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.section-icon i {
+    font-size: 24px;
+    color: #D72077 !important;
+}
+
+.section-icon i .path1,
+.section-icon i .path2,
+.section-icon i .path3 {
+    fill: #D72077 !important;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #181c32;
+    margin: 0;
+}
+
+/* Seções do Formulário */
+.form-section {
+    position: relative;
+}
+
+.form-label {
+    font-size: 14px;
+    color: #5e6278;
+}
+
+/* Upload de Evidências */
+.upload-evidencias-dropzone {
+    border: 2px dashed #e4e6ef;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    padding: 3rem 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upload-evidencias-dropzone:hover {
+    border-color: #D72077;
+    background-color: #fff5f8;
+}
+
+.upload-evidencias-dropzone.drag-over {
+    border-color: #D72077;
+    background-color: #fff5f8;
+}
+
+.upload-evidencias-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.upload-evidencias-icon {
+    font-size: 64px;
+    color: #b5b5c3;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.upload-evidencias-icon .path1,
+.upload-evidencias-icon .path2,
+.upload-evidencias-icon .path3,
+.upload-evidencias-icon .path4 {
+    fill: #b5b5c3;
+    transition: fill 0.3s ease;
+}
+
+.upload-evidencias-dropzone:hover .upload-evidencias-icon {
+    color: #D72077;
+}
+
+.upload-evidencias-dropzone:hover .upload-evidencias-icon .path1,
+.upload-evidencias-dropzone:hover .upload-evidencias-icon .path2,
+.upload-evidencias-dropzone:hover .upload-evidencias-icon .path3,
+.upload-evidencias-dropzone:hover .upload-evidencias-icon .path4 {
+    fill: #D72077;
+}
+
+.upload-evidencias-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: #5e6278;
+    margin-bottom: 0.5rem;
+}
+
+.upload-evidencias-hint {
+    font-size: 13px;
+    color: #a1a5b7;
+}
+
+/* Lista de Arquivos Enviados */
+.uploaded-evidencias-list {
+    margin-top: 1.5rem;
+}
+
+.uploaded-evidencia-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border: 1px solid #e4e6ef;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+}
+
+.uploaded-evidencia-item:last-child {
+    margin-bottom: 0;
+}
+
+.uploaded-evidencia-info {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+}
+
+.uploaded-evidencia-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f2;
+    border-radius: 6px;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.uploaded-evidencia-icon i {
+    font-size: 20px;
+    color: #5e6278;
+}
+
+.uploaded-evidencia-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.uploaded-evidencia-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #181c32;
+    margin-bottom: 0.25rem;
+    word-break: break-word;
+}
+
+.uploaded-evidencia-size {
+    font-size: 12px;
+    color: #a1a5b7;
+}
+
+.uploaded-evidencia-remove {
+    background: none;
+    border: none;
+    color: #dc3545;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+.uploaded-evidencia-remove:hover {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+.uploaded-evidencia-remove i {
+    font-size: 18px;
+}
+
+/* Card de Resumo do Lead */
+.card-resumo-lead {
+    position: sticky;
+    top: 100px;
+    border: 1px solid #e4e6ef;
+}
+
+.resumo-item {
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid #e4e6ef;
+}
+
+.resumo-detail {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f1f1f2;
+}
+
+.resumo-detail:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Responsividade */
+@media (max-width: 991.98px) {
+    .card-resumo-lead {
+        position: static;
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .upload-evidencias-dropzone {
+        padding: 2rem 1.5rem;
+        min-height: 180px;
+    }
+
+    .upload-evidencias-icon {
+        font-size: 40px;
+        margin-bottom: 0.75rem;
+    }
+
+    .upload-evidencias-text {
+        font-size: 14px;
+    }
+
+    .upload-evidencias-hint {
+        font-size: 12px;
+    }
+
+    .d-flex.justify-content-end.gap-3 {
+        flex-direction: column;
+    }
+
+    .d-flex.justify-content-end.gap-3 .btn {
+        width: 100%;
+    }
+}
